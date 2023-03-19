@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello Sailor!!!');
 });
 
 app.get('/api/gateway', async (req, res) => {
@@ -74,11 +74,6 @@ app.post('/api/gateway/device', async (req, res) => {
         res.status(400).json(err.message);
     }
 });
-
-// app.put('/api/gateway/device/:id', (req, res) => {
-//     throw new Error('not implemented');
-//     res.sendStatus(500);
-// });
 
 app.delete('/api/gateway/device/:id', async (req, res) => {
     try {

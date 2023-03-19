@@ -153,11 +153,3 @@ class Application {
 
 
 module.exports = Application;
-
-
-// const first = createGateway('first', '127.0.0.1');
-// const second = createGateway('second', '127.0.0.1');
-// const third = createGateway('third', '127.0.0.1');
-// gateways.set(first.id, first);
-// gateways.set(second.id, second);
-// gateways.set(third.id, third);
