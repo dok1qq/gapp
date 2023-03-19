@@ -1,0 +1,22 @@
+.app {
+  display: flex;
+
+  width: 900px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 400px;
+  padding-bottom: 30vh;
+  padding-left: 96px;
+  padding-right: 96px;
+}
+
+.content > * + * {
+  margin-top: 32px;
+}

@@ -113,7 +113,9 @@ class Application {
             id: GUID.create(),
             vendor,
             date,
-            status: DeviceStatus.OFFLINE,
+            status: Math.floor((Math.random() * 10) % 2)
+                ? DeviceStatus.ONLINE
+                : DeviceStatus.OFFLINE,
         };
 
         if  (devicesIds.length < 10) {
@@ -131,7 +133,19 @@ class Application {
         const device = Application.devices.get(id);
         if (device) {
             Application.devices.delete(id);
-            // TODO
+
+            const keys = Array.from(Application.bounds.keys());
+            for (let i = 0; i < keys.length; i++) {
+                const devicesIds = Application.bounds.get(keys[i]);
+                if (devicesIds) {
+                    const includeDevice = devicesIds.includes(id);
+                    if (includeDevice) {
+                        const withoutRemovedDevice = devicesIds.filter(dId => dId !== id);
+                        Application.bounds.set(keys[i], withoutRemovedDevice);
+                        break;
+                    }
+                }
+            }
         }
     }
 }

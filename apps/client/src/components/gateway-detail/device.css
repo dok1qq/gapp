@@ -1,0 +1,22 @@
+.device {
+  padding: 8px 12px;
+  border: 1px dashed black;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color, color 0.1s ease-in-out;
+}
+
+.device-vendor, .device-date {
+  color: #333;
+  font-size: 12px
+}
+
+.device
+
+.device-status[data-online="true"] {
+  color: green;
+}
+
+.device-status[data-online="false"] {
+  color: red;
+}

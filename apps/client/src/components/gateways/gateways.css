@@ -1,0 +1,16 @@
+.gateway {
+  padding: 8px 12px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color, color 0.1s ease-in-out;
+}
+
+.gateway:hover {
+  border-color: #bbb;
+}
+
+.gateway-ip {
+  color: #333;
+  font-size: 12px
+}

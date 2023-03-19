@@ -1,0 +1,22 @@
+.gateway-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.gateway-form > * + * {
+  margin-top: 16px;
+}
+
+.gateway-form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.gateway-form__field > * + * {
+  margin-top: 8px;
+}
+
+.gateway-form__error {
+  color: red;
+  word-break: break-word;
+}

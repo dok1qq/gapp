@@ -2,6 +2,7 @@
 
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const path = require('path');
 
 const Application = require('./application');
@@ -14,6 +15,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -73,21 +75,21 @@ app.post('/api/gateway/device', async (req, res) => {
     }
 });
 
-app.put('/api/gateway/device/:id', (req, res) => {
-    throw new Error('not implemented');
-    res.sendStatus(500);
-});
+// app.put('/api/gateway/device/:id', (req, res) => {
+//     throw new Error('not implemented');
+//     res.sendStatus(500);
+// });
 
-app.delete('/api/gateway/device/:id', (req, res) => {
-    // TODO: update device to gateway
+app.delete('/api/gateway/device/:id', async (req, res) => {
+    try {
+        await Application.deleteDevice(req.params.id);
+        res.sendStatus(200);
+    } catch (err) {
+        res.status(400).json(err.message);
+    }
 });
 
 
 app.listen(port, () => {
     console.log(`App listening on port: ${port}`);
 });
-
-
-// TODOs
-// db
-// docker
