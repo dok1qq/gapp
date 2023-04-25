@@ -1,4 +1,4 @@
-## GAPP - gateways application
+## GAPP - gateways playground application
 
 ### Stack:
 - Express
